@@ -91,6 +91,25 @@
                     </ul>
                 </div>
             </div>
+
+            <button type="button" class="btn btn-primary mb-3" id="liveToastBtn4">Colors</button>
+
+        <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
+        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
+            <div id="liveToast4" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                <img src="./icons/info-circle-fill.svg" class="rounded me-2" alt="filled info icon">
+                <strong class="me-auto">Colors</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body p-4">
+                    <ul>
+                        <li><b>Text Colors:</b> .text-muted, .text-primary, .text-success, .text-info, .text-warning, 
+                            .text-danger, .text-secondary, .text-white, .text-dark, 
+                            .text-body (default body color/often black) and .text-light</li>
+                        <li><b>Background Colors:</b> .bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light</li>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -121,6 +140,16 @@
         const toastBootstrap3 = bootstrap.Toast.getOrCreateInstance(toastLiveExample3)
         toastTrigger3.addEventListener('click', () => {
             toastBootstrap3.show()
+        })
+        }
+
+        const toastTrigger4 = document.getElementById('liveToastBtn4')
+        const toastLiveExample4 = document.getElementById('liveToast4')
+
+        if (toastTrigger4) {
+        const toastBootstrap4 = bootstrap.Toast.getOrCreateInstance(toastLiveExample4)
+        toastTrigger4.addEventListener('click', () => {
+            toastBootstrap4.show()
         })
         }
     </script>
