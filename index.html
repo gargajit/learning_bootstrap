@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         span {
-            color:rgb(85, 27, 130);
+            color:rgb(122, 117, 21);
         }
         .toast-body {
             font-size: large;
@@ -70,6 +70,28 @@
                 </div>
             </div>
         </div>
+
+        <button type="button" class="btn btn-primary mb-3" id="liveToastBtn3">Typography</button>
+
+        <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
+        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
+            <div id="liveToast3" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                <img src="./icons/info-circle-fill.svg" class="rounded me-2" alt="filled info icon">
+                <strong class="me-auto">Typography</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body p-4">
+                    <ul>
+                        <li><b>HTML Headings:</b> <span>h1 to h6</span> with a bolder font-weight. 
+                            You can also use .h1 to .h6 classes on other elements to make them behave as heading</li>
+                        <li><b>Display Headings:</b> <span>eg: class="display-1</span> are used to stand out more than normal headings (larger font-size & lighter font-weight)</li>
+                        <li><b>Small element:</b> <span>&lt;small&gt;</span> is used to create a smaller, secondary text in any heading</li>
+                        <li><b>Mark element:</b> <span>&lt;mark&gt;</span> is used to highlight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         const toastTrigger1 = document.getElementById('liveToastBtn1')
@@ -89,6 +111,16 @@
         const toastBootstrap2 = bootstrap.Toast.getOrCreateInstance(toastLiveExample2)
         toastTrigger2.addEventListener('click', () => {
             toastBootstrap2.show()
+        })
+        }
+
+        const toastTrigger3 = document.getElementById('liveToastBtn3')
+        const toastLiveExample3 = document.getElementById('liveToast3')
+
+        if (toastTrigger3) {
+        const toastBootstrap3 = bootstrap.Toast.getOrCreateInstance(toastLiveExample3)
+        toastTrigger3.addEventListener('click', () => {
+            toastBootstrap3.show()
         })
         }
     </script>
