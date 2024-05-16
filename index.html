@@ -7,12 +7,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
+        body {
+            height: 100vh;
+        }
         span {
             color:rgb(122, 117, 21);
         }
         .toast-body {
             font-size: large;
         }
+       pre {
+        width: 100%;
+        white-space: pre-wrap;
+       }
+       code {
+        display: block;
+        width: 100%;
+        white-space: pre-wrap;
+        overflow-x: auto;
+       }
     </style>
 </head>
 <body>
@@ -30,7 +43,9 @@
     <div class="container-fluid my-4">
         <h1>Concepts Learnt</h1>
         <p>Below are the concepts learnt. The details can be opened as toasts.</p>
-        <button type="button" class="btn btn-primary mb-3" id="liveToastBtn1">Containers</button>
+
+        <div class="flex-container">
+        <button type="button" class="btn btn-outline-primary mb-3" id="liveToastBtn1">Containers</button>
 
         <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
         <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
@@ -48,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-primary mb-3" id="liveToastBtn2">Grids</button>
+        <button type="button" class="btn btn-outline-primary mb-3" id="liveToastBtn2">Grids</button>
 
         <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
         <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
@@ -71,7 +86,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary mb-3" id="liveToastBtn3">Typography</button>
+        <button type="button" class="btn btn-outline-primary mb-3" id="liveToastBtn3">Typography</button>
 
         <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
         <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
@@ -91,8 +106,8 @@
                     </ul>
                 </div>
             </div>
-
-            <button type="button" class="btn btn-primary mb-3" id="liveToastBtn4">Colors</button>
+        </div>
+        <button type="button" class="btn btn-outline-primary mb-3" id="liveToastBtn4">Colors</button>
 
         <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
         <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
@@ -108,6 +123,113 @@
                             .text-danger, .text-secondary, .text-white, .text-dark, 
                             .text-body (default body color/often black) and .text-light</li>
                         <li><b>Background Colors:</b> .bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-primary mb-3" id="liveToastBtn5">Tables</button>
+
+        <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
+        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <!--<div id="liveToast5" class="toast" role="alert" aria-live="assertive" aria-atomic="true">-->
+                <div class="toast-header">
+                <img src="./icons/info-circle-fill.svg" class="rounded me-2" alt="filled info icon">
+                <strong class="me-auto">Basic Table</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body p-4">
+                    <p class="h6">Code Block Example</p>
+                    <pre class="w-100">
+                        <code class="language-html"><small>
+&lt;table class="table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Firstname&lt;th&gt;
+            &lt;th&gt;Lastname&lt;th&gt;
+            &lt;th&gt;Email&lt;th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th&gt;John&lt;th&gt;
+            &lt;th&gt;Doe&lt;th&gt;
+            &lt;th&gt;john@example.com&lt;th&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+                        </small></code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        
+        <button type="button" class="btn btn-outline-primary mb-3" id="liveToastBtn6">Images</button>
+
+        <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
+        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
+            <div id="liveToast6" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                <img src="./icons/info-circle-fill.svg" class="rounded me-2" alt="filled info icon">
+                <strong class="me-auto">Shapes, Alignment, Responsiveness</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body p-4">
+                    <ol>
+                        <li>Image Shapes</li>
+                        <ul>
+                            <li><b>Rounded Corners:</b> <span>class="rounded"</span></li>
+                            <li><b>Circle:</b> <span>class="rounded-circle"</span></li>
+                            <li><b>Thumbnail:</b> <span>class="img-thumbnail"</span></li>
+                        </ul>
+                        <li>Aligning Images</li>
+                        <ul>
+                            <li><b>Left:</b> <span>class="float-start"</span></li>
+                            <li><b>Right:</b> <span>class="float-end"</span></li>
+                            <li><b>Center:</b> <span>class="mx-auto d-block"</span> (margin: auto, display: block)</li>
+                        </ul>
+                        <li>Responsive Images</li>
+                        <ul>
+                            <li><b>Create responsive image:</b> <span>class="img-fluid"</span></li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-primary mb-3" id="liveToastBtn7">Colors</button>
+
+        <!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
+        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-start align-items-center w-100">
+            <div id="liveToast7" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                <img src="./icons/info-circle-fill.svg" class="rounded me-2" alt="filled info icon">
+                <strong class="me-auto">Alerts</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body p-4">
+                    <p>
+                        <span>Alerts</span> are created with the <b>.alert class</b>,<br> 
+                        followed by one of the contextual classes<br> 
+                        <b>.alert-success,  
+                        .alert-info, 
+                        .alert-warning,   
+                        .alert-danger,  
+                        .alert-primary, 
+                        .alert-secondary,  
+                        .alert-light or 
+                        .alert-dark</b>
+                    </p>
+                    <p class="h6">Examples</p>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr><td>class="alert alert-success"</td></tr>
+                            <tr><td>class="alert alert-info"</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="h5">Alert Links</p>
+                    <p>Add the <b>.alert-link</b> class to any links inside the alert box to create "matching colored links"</p>
                 </div>
             </div>
         </div>
@@ -150,6 +272,36 @@
         const toastBootstrap4 = bootstrap.Toast.getOrCreateInstance(toastLiveExample4)
         toastTrigger4.addEventListener('click', () => {
             toastBootstrap4.show()
+        })
+        }
+
+        const toastTrigger5 = document.getElementById('liveToastBtn5')
+        const toastLiveExample5 = document.getElementById('liveToast5')
+
+        if (toastTrigger5) {
+        const toastBootstrap5 = bootstrap.Toast.getOrCreateInstance(toastLiveExample5)
+        toastTrigger5.addEventListener('click', () => {
+            toastBootstrap5.show()
+        })
+        }
+
+        const toastTrigger6 = document.getElementById('liveToastBtn6')
+        const toastLiveExample6 = document.getElementById('liveToast6')
+
+        if (toastTrigger6) {
+        const toastBootstrap6 = bootstrap.Toast.getOrCreateInstance(toastLiveExample6)
+        toastTrigger6.addEventListener('click', () => {
+            toastBootstrap6.show()
+        })
+        }
+
+        const toastTrigger7 = document.getElementById('liveToastBtn7')
+        const toastLiveExample7 = document.getElementById('liveToast7')
+
+        if (toastTrigger7) {
+        const toastBootstrap7 = bootstrap.Toast.getOrCreateInstance(toastLiveExample7)
+        toastTrigger7.addEventListener('click', () => {
+            toastBootstrap7.show()
         })
         }
     </script>
