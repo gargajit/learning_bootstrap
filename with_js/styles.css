@@ -13,11 +13,12 @@
     background-color: yellowgreen;
 } */
 
-
-.info {
-    border: 2px solid rgba(0, 0, 0, 0.5);
-}
 .data {
+    border: 2px solid rgba(201, 180, 180, 0.5);
     padding: 10px;
     margin: 5px;
+}
+
+code {
+    color: rgba(255, 255, 255, 0.6);
 }
