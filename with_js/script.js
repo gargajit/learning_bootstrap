@@ -1,55 +1,53 @@
 // Function to check the window width and show data
 function checkWindowWidth() {
-    var windowWidth = window.innerWidth;
-    showData(windowWidth);
+    var screenWidth = screen.width;
+    showData(screenWidth);
 }
 
 
 // Function to create para inside the row-item to show details
-function showData(winWidth) {
+function showData(screenWidth) {
 
-    let updateData = null;
+    let updateData = document.querySelector('.info-one .data');
 
     // Check if paragraph already exists
-    if (document.getElementsByClassName('data')) {
-        updateData = document.getElementsByClassName('data');
-    }
+    // if (document.getElementsByClassName('data').length > 0) {
+    //     updateData = document.getElementsByClassName('data')[0];
+    // }
 
     // If a paragraph already exists, update it's content
     if  (updateData) {
-        if (winWidth >= 992) {
-            updateData.innerHTML = `<code>current window (${winWidth}): >= 992<br />col-lg-4</code>`;
+        if (screenWidth >= 992) {
+            updateData.innerHTML = `<code>current window (${screenWidth}): >= 992<br />col-lg-4</code>`;
         }
-        else if (winWidth >= 768 && winWidth <= 991) {
-            updateData.innerHTML = `<code>current window (${winWidth}): 768 - 991<br />col-md-8</code>`;
+        else if (screenWidth >= 768 && screenWidth <= 991) {
+            updateData.innerHTML = `<code>current window (${screenWidth}): 768 - 991<br />col-md-8</code>`;
         }
-        else if (winWidth >= 576 && winWidth <= 767) {
-            updateData.innerHTML = `<code>current window (${winWidth}): 576 - 767<br />col-sm-12</code>`;
+        else if (screenWidth >= 576 && screenWidth <= 767) {
+            updateData.innerHTML = `<code>current window (${screenWidth}): 576 - 767<br />col-sm-12</code>`;
+        }
+        else {
+            updateData.innerHTML = `<code>current window (${screenWidth}): <br />has no specific class</code>`;
         }
     }
 
-
-    // If no paragraph exists, create a new and add to div
-    if (winWidth >= 992) {
+    else {
+        // If no paragraph exists, create a new and add to div
         const para = document.createElement("p");
-        para.innerHTML = `<code>current window (${winWidth}): >= 992<br />col-lg-4</code>`;
-        para.classList.add = "data"
-        document.getElementsByClassName('info-one').appendChild(para);
-    } 
-    else if (winWidth >= 768 && winWidth <= 991) {
-        const para = document.createElement("p");
-        para.innerHTML =  `<code>current window (${winWidth}): 768 - 991<br />col-md-8</code>`;
-        para.classList.add = "data"
-        document.getElementsByClassName('info-one').appendChild(para);
-    }
-    else if (winWidth >= 576 && winWidth <= 767) {
-        const para = document.createElement("p");
-        para.innerHTML =  `<code>current window (${winWidth}): 576 - 767<br />col-sm-12</code>`;
-        para.classList.add = "data"
-        document.getElementsByClassName('info-one').appendChild(para);
+        if (screenWidth >= 992) {
+            para.innerHTML = `<code>current window (${screenWidth}): >= 992<br />col-lg-4</code>`;      
+        } 
+        else if (screenWidth >= 768 && screenWidth <= 991) {
+            para.innerHTML =  `<code>current window (${screenWidth}): 768 - 991<br />col-md-8</code>`;
+        }
+        else if (screenWidth >= 576 && screenWidth <= 767) {
+            para.innerHTML =  `<code>current window (${screenWidth}): 576 - 767<br />col-sm-12</code>`;
+        }
+        para.classList.add('data');
+        document.querySelector('.info-one').appendChild(para);
     }
 } 
 
 
 // Constantly check the window width every 500 milliseconds (0.5 seconds)
-var intervalID = setInterval(checkWindowWidth, 50000);
+var intervalID = setInterval(checkWindowWidth, 500);
