@@ -1,0 +1,23 @@
+.one, .two, .three {
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+.one {
+    background-color:cadetblue
+}
+/* .two {
+    background-color: blueviolet;
+}
+.three {
+    background-color: yellowgreen;
+} */
+
+
+.info {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+.data {
+    padding: 10px;
+    margin: 5px;
+}
